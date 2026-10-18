@@ -1,3 +1,5 @@
+尘白禁区的 FUObjectArray 比原版 UE 4.26 多 8 字节，两个监听器数组实际在 0xE8 / 0xF8，而 UE4SS 硬编码 0xE0 / 0xF0。它在 UE4SSProgram::update 线程里做去重检查时把 Num|Max（0x0000000400000001）当指针解引用 → 崩
+
 # Unreal Engine 4/5 Scripting System
 
 Lua scripting system platform, C++ Modding API, SDK generator, blueprint mod loader, live property editor and other dumping utilities for UE4/5 games.
